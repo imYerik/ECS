@@ -18,9 +18,9 @@ import com.amazonaws.services.s3.model.S3Object;
 import com.amazonaws.services.s3.model.S3ObjectSummary;
 
 public class ECS_S3 {
-	public static String uid = "user01";	              //object user of ECS, not management user;
-	public static String secret = "3Ga/y7Fiixit9auihdc57aiLLchnr8g07nLJkSl6";  //generate when create object user; 
-	public static String viprDataNode = "http://172.16.0.1:9020";    //ECS node ENDPOINT
+	public static String uid = "user01";	                                     //object user of ECS, not management user;
+	public static String secret = "3Ga/y7Fiixit9auihdc57aiLLchnr8g07nLJkSl6";    //Security Key, generated when create object user; 
+	public static String viprDataNode = "http://172.16.0.1:9020";                //ECS node ENDPOINT
 	
 	public static void main(String[] args) throws Exception {
 		AmazonS3Client s3client = new AmazonS3Client(new BasicAWSCredentials(uid, secret));		
@@ -54,8 +54,8 @@ public class ECS_S3 {
 		 deleteObject(s3client,"testbucket","IMG_5022_Snapseed.jpg");
 		 listObjects(s3client,"bucket01");
 		 
-//			删除Bucket
-			deleteBucket(s3client,"testbucket");
+//	     删除Bucket
+		 deleteBucket(s3client,"testbucket");
 	}
 	
 
